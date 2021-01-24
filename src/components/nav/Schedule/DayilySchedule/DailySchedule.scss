@@ -1,0 +1,20 @@
+h4 {
+  color: rgb(118, 129, 152);
+  opacity: 0.6;
+  user-select: none;
+  margin: 0;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.TimeTable {
+  width: 300px;
+}
+
+.sheduleContainer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  width: 300px;
+}

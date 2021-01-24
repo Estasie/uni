@@ -1,0 +1,38 @@
+$navTextActive: rgb(26, 45, 84);
+@mixin regularStyle{
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10vh;
+    padding-left: 3em;
+    img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    
+    button {
+        font-weight: 700;
+        border: none;
+        background: none;
+        color: rgb(26, 45, 84);
+        padding-left: 1em;
+        user-select: none;
+    }
+
+    .ImageButton{
+        padding-left: 0;
+    }
+
+    button:focus{
+        outline: none;
+    }
+
+    button:hover{
+        cursor: pointer;
+    }
+}
+.userInfo {
+    @include regularStyle;
+}

@@ -1,0 +1,48 @@
+$baseColor: #768198;
+$darkColor: rgb(26, 45, 84);
+
+span {
+  display: inline-block;
+  color: $baseColor;
+  font-weight: 500;
+
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 0.5em;
+}
+
+.boldSpan {
+  color: $darkColor;
+}
+
+.scheduleItem {
+  display: flex;
+  height: 80px;
+  width: 100%;
+  & + .scheduleItem {
+    margin-top: 10px;
+  }
+}
+
+.practise {
+  background: #90cda1;
+  width: 10px;
+  margin-right: 0;
+  height: 100%;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25),
+    inset 4px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 30px 0px 0px 30px;
+
+  float: left;
+}
+.scheduleInfo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 100%;
+  padding-top: 0.5em;
+  background: #ffffff;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 10px 10px 0px;
+}

@@ -1,0 +1,24 @@
+
+
+.weeklyScheduleInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 66px;
+  background: #90cda1;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+
+  & + .weeklyScheduleInfo {
+    margin-top: 2px;
+  }
+  span {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .span-bold {
+    color: #fff;
+  }
+}

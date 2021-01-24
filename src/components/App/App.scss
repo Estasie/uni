@@ -1,0 +1,10 @@
+$navTextActive: rgb(26, 45, 84);
+
+body {
+    font-size: 14px;
+}
+
+.active {
+    color: $navTextActive;
+    font-weight: 700;
+}

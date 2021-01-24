@@ -1,0 +1,43 @@
+$navText: #758095;
+$navTextActive: rgb(26, 45, 84);
+
+a {
+    text-decoration: none;
+    color: $navText;
+}
+
+.navigation {
+    
+    display: flex;
+    flex-direction: column;
+    width: 16em;
+    height: 100vh;
+    color: $navText;
+    background-color: #F7F7F7;
+    li{
+        margin-top: 2em;
+        list-style-type: none;
+        margin-bottom: 2em;
+        cursor: pointer;
+    }
+}
+
+.btnExit{
+    border: none;
+    background: none;
+    color: $navTextActive;
+    font-weight: 600;
+    text-align: left;
+    margin-top: 24em;
+    margin-bottom: 4em;
+    padding-left: 3em ;
+    user-select: none;
+}
+
+.btnExit:focus{
+    outline: none;
+}
+
+.btnExit:hover{
+    cursor:pointer;
+}
