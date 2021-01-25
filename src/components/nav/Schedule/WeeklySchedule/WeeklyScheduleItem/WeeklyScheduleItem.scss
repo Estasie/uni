@@ -1,4 +1,5 @@
-
+$lection: #90cda1;
+$seminar: #7BA4D4;
 
 .weeklyScheduleInfo {
   display: flex;
@@ -6,7 +7,6 @@
   justify-content: center;
 
   height: 66px;
-  background: #90cda1;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 
@@ -21,4 +21,12 @@
   .span-bold {
     color: #fff;
   }
+}
+
+.lection-color{
+  background: $lection;
+}
+
+.seminar-color{
+  background: $seminar;
 }

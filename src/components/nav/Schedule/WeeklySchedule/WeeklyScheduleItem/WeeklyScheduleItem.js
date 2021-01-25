@@ -8,25 +8,35 @@ export default class WeeklyScheduleItem extends React.Component {
     this.state = {
       lessons: this.props.lessons,
       day: this.props.day,
+      isSeminar: this.props.lessons.isSeminar
+      
     };
   }
 
   render() {
-    let days= this.state.day;
     let lessons = this.state.lessons;
-    let spreadLesoons = {...lessons};
-    // console.log(spreadLesoons);
     return (
-
-      this.state.lessons.map(lesson => {
-        return(
-          <div className="weeklyScheduleItems-item">
-          <div className="weeklyScheduleInfo">
-            <span className="span-bold">{lesson.class}</span>
-            <span>{lesson.place}</span>
+      lessons.map(lesson => {
+        if(lesson.isSeminar === false){
+          return(
+            <div className="weeklyScheduleItems-item">
+            <div className="weeklyScheduleInfo lection-color">
+              <span className="span-bold">{lesson.class}</span>
+              <span>{lesson.place}</span>
+            </div>
           </div>
-        </div>
-        )
+          )
+        } else {
+          return(
+            <div className="weeklyScheduleItems-item">
+            <div className="weeklyScheduleInfo seminar-color">
+              <span className="span-bold">{lesson.class}</span>
+              <span>{lesson.place}</span>
+            </div>
+          </div>
+          )
+        }
+        
         
       })
         

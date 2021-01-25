@@ -1,39 +1,69 @@
 $headerColor: #626573;
-main {   
-    overflow-x: auto;
-    
+$darkColor: rgb(26, 45, 84);
+main {
+  overflow-x: auto;
 }
 
-.wrapper{
-    overflow-y: hidden;
-    overflow-x: scroll;
-    height: 100vh;
-    
+.wrapper {
+  overflow-y: hidden;
+  overflow-x: scroll;
+  height: 100vh;
 }
 
 .container {
-    margin-left: 94px;
-    margin-top: 40px;
-    height: 100%;
-
-
+  margin-left: 94px;
+  margin-top: 40px;
+  height: 100%;
 }
 
 h1 {
-    color: $headerColor;
+  color: $headerColor;
 }
 
 h3 {
-    margin: 0;
-    color: $headerColor;
+  margin: 0;
+  color: $headerColor;
 }
-
 
 .scheduleContainer {
-    display: flex;
-    margin-top: 70px;    
+  display: flex;
+  margin-top: 70px;
 }
+.weekly__schedule {
+  display: flex;
+  flex-direction: column;
+}
+.switch__container {
+  left: 0;
+  margin-left: 100px;
+  margin-top: 50px;
+  p {
+    color: #768198;
+    opacity: 0.6;
+    -webkit-user-select: none;
+    user-select: none;
+    margin: 0;
+    font-weight: 500;
+  }
+}
+.switch__button-button {
+  width: 260px;
+  height: 50px;
+  margin-top: 10px;
+  border: none;
+  background: #C4C4C4;
+  color: #fff;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  &:hover {
+    cursor: pointer;
+    background: #BBBBBB;
 
-
-
-
+  }
+  &:focus{
+    outline: none;
+    
+  }
+}
