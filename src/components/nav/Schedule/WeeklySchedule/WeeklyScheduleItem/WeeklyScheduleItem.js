@@ -6,19 +6,30 @@ export default class WeeklyScheduleItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      class: this.props.class,
-      place: this.props.place,
+      lessons: this.props.lessons,
+      day: this.props.day,
     };
   }
 
   render() {
+    let days= this.state.day;
+    let lessons = this.state.lessons;
+    let spreadLesoons = {...lessons};
+    // console.log(spreadLesoons);
     return (
-        <div className="weeklyScheduleItems-item">
+
+      this.state.lessons.map(lesson => {
+        return(
+          <div className="weeklyScheduleItems-item">
           <div className="weeklyScheduleInfo">
-            <span className="span-bold">{this.state.class}</span>
-            <span>{this.state.place}</span>
+            <span className="span-bold">{lesson.class}</span>
+            <span>{lesson.place}</span>
           </div>
         </div>
+        )
+        
+      })
+        
     );
   }
 }

@@ -44,7 +44,6 @@ $headerColor: #626573;
 .weeklyScheduleItems {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   height: 474px;
   overflow: hidden;
   width: 270px;
@@ -59,5 +58,9 @@ $headerColor: #626573;
 
 .weeklyScheduleItems-item{
     min-height: 66px ;
+
+    & + .weeklyScheduleItems-item {
+      margin-top: 0.2em;
+    }
 }
 

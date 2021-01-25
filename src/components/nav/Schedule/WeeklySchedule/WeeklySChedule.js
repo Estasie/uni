@@ -54,28 +54,55 @@ export default class WeeklySchedule extends Component {
          
 
             dayOfTheWeek.map((day)=> {
-              //console.log(day);
-                return <div className="weeklyScheduleItems">
-              
-                { 
-                lessons.map((time) => {   
+
+              console.log({...day});
+              if(day.lessons){
+                return (
+                  <div className="weeklyScheduleItems">
+                    <WeeklyScheduleItem {...day} key={day.id} />
+                    </div>
+                  )
+              } else {
+                return (
+                  <div className="weeklyScheduleItems">
+                    
+                    </div>
+                )
+              }
                 
-                 console.log(time);
-                 //let les = day.map(x => x.lessons);
+
+                
+              
+            })
+
+
+
+
+
+            // dayOfTheWeek.map((day)=> {
+            //   console.log(day);
+            //     return <div className="weeklyScheduleItems">
+              
+            //     { 
+            //     lessons.map((time) => {   
+                
+            //      console.log(time);
+                //  let les = day.map(x => x.lessons);
+                //  console.log(les);
                   //var lesson = les.filter(i => i.time == time);
                   //return <WeeklyScheduleItem {...lesson} key={lesson.id} />;
                  
                   //let lesson = this.state.items.map(x => x.lessons.map(y => y.time == time));
                   //console.log(lesson);
-                }
+            //     }
                   
-               )}
-             </div>
+            //    )}
+            //  </div>
               
                 
               
               
-            })
+            // })
           }
           
         </div>
