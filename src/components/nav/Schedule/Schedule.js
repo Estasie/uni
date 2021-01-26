@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import DailySchedule from "./DayilySchedule/DailySchedule";
 import WeeklySchedule from "./WeeklySchedule/WeeklySChedule";
+import Calendar from '../../calendar';
 
 import { nanoid } from "nanoid";
 import "./Schedule.scss";
@@ -10,6 +11,7 @@ export default class Schedule extends Component {
     super(props);
 
     this.state = {
+      calendarIsOpen: false,
       items: [
         {
           time: "8:30-10:00",
@@ -137,19 +139,49 @@ export default class Schedule extends Component {
         },
       ],
     };
+
+    this.onActive = this.onActive.bind(this);
   }
 
+  onActive(){
+    if(!this.state.calendarIsOpen){
+      this.setState({calendarIsOpen: true});
+  
+    } else {
+      this.setState({calendarIsOpen: false});
+      
+    } 
+      
+    
+    
+  }
+
+
   render() {
-    const currentWeek = {
-      bottom: ["нижней", "нижнюю"],
-      top: ["верхней", "верхнюю"],
-    };
+    // const currentWeek = {
+    //   bottom: ["нижней", "нижнюю"],
+    //   top: ["верхней", "верхнюю"],
+    // };
+
     return (
       <>
         <div className="wrapper">
+        <div className="calendar__wrapper">
+            <button type="button" onClick={this.onActive} className="calendar__button"><span className="ico__calendar"></span></button>
+            {!!this.state.calendarIsOpen &&(<Calendar/>)}
+            </div>
+        
           <div className="container">
+            <div className="header__container">
             <h1>Расписание занятий</h1>
+            
+            
+            </div>
+            
             <div className="scheduleContainer">
+            
+
+            
               <DailySchedule
                 items={this.state.items}
                 name="test"

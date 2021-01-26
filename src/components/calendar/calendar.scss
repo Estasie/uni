@@ -1,0 +1,157 @@
+$newColor: #8576ED;
+$taskColor: #F39946;
+$eventColor: #FF467E;
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+
+hr {
+  background: #000000;
+  mix-blend-mode: normal;
+  opacity: 0.17;
+  margin-top: 30px;
+}
+
+.calendar {
+  transition: ease-in-out 3s;
+right: 0;
+  z-index: 1;
+  position: fixed;
+  width: 350px;
+  height: 100vh;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 95, 109, 0.7) 0%,
+    rgba(42, 46, 65, 0.7) 100%
+  );
+  backdrop-filter: blur(30px);
+  padding: 30px;
+  user-select: none;
+}
+
+.calendar_name {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+  font-size: 20px;
+  margin-bottom: 60px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  color: #fff;
+}
+
+hr {
+  background: #fff;
+  mix-blend-mode: normal;
+  opacity: 0.17;
+}
+
+.nav {
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(255,255,255, .5);
+  border-radius: 99px;
+  outline: 0;
+  background-color: transparent;
+  color:rgba(255,255,255, .5);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.datetime {
+  margin: 0 auto;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.week-container,
+.day-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  color: #fff;
+}
+
+.week-container {
+  margin-top: 20px;
+  opacity: 0.5;
+  font-weight: 300;
+}
+
+.week-cell,
+.day-cell {
+  flex: 0 0 calc(100% / 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.day-cell {
+  &--faded {
+    opacity: 0.4;
+  }
+
+  &--today {
+    border-radius: 100px;
+    background-color: #1abc9c;
+    color: #fff;
+  }
+}
+
+
+.footer__description{
+  color: #fff;
+  font-weight: 400;
+  margin-top: 30px;
+}
+
+.footer__events{
+  display:flex;
+  flex-wrap: wrap;
+  height: auto;
+  font-size: 10px;
+  color: #fff;
+  letter-spacing: .8px;
+
+}
+
+.event {
+    border-radius: 5px;
+    &--new{
+      padding: 1.5em 2em;
+      background-color: $newColor;
+    }
+    &--task{
+      padding: 1.5em 2em;
+      background-color: $taskColor;
+    }
+
+    &--event{
+      padding: 1.5em 2em;
+      background-color: $eventColor;
+    }
+
+    
+}
+
+
+.event{
+  width: auto;
+  margin-top: 10px;
+  &+.event{
+    margin-left: 10px;
+  }
+}
+
+.event{
+  &.event--event{
+    margin-left: 0;
+  }
+}
+
+
