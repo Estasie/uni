@@ -1,0 +1,96 @@
+@mixin textOverflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+$darkColor: #313750;
+
+
+.task_wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    padding: 10px;
+    margin-top: 40px;
+}
+.task_header {
+    color: $darkColor;
+    font-size: 18px;
+    margin-left: 2em;
+    margin-bottom: 1em;
+    font-weight: 600;
+}
+.card_wrapper{
+    width: 100%;
+}
+
+.card__info{
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    padding: 10px 20px;
+
+    span{
+        padding-left: 0;
+    }
+}
+
+.event{
+    @include textOverflow();
+    font-size: 16px;
+
+    color:$darkColor;
+    font-weight: 500;
+    
+}
+
+.card__class{
+    @include textOverflow();
+    color: rgba(26, 45, 84, 0.6);
+
+}
+.card__progress_wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.card__progress{
+    font-weight: 100;
+    font-size: 12px;
+}
+
+.card__progress_total{
+    background-color: #E3E2E2;
+        height: 0.5em;
+        width: 70%;
+        margin: 0 12px;
+        border-radius: 2px;
+
+}
+
+.card__progress_value{
+    position: relative;
+    top: -.9em;
+    background-color: #7BA4D4;
+    height: 0.5em;
+    width: 100%;
+    margin: 0 12px;
+    border-radius: 2px;
+}
+
+
+.card__progress_prs{
+    display: inline-block;
+}
+
+
+
+.task__container{
+    width: 300px;
+    height: 400px;
+
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+   
+}
+
+

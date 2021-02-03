@@ -1,6 +1,6 @@
-$newColor: #8576ED;
-$taskColor: #F39946;
-$eventColor: #FF467E;
+$newColor: #8576ed;
+$taskColor: #f39946;
+$eventColor: #ff467e;
 body {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
@@ -14,8 +14,9 @@ hr {
 }
 
 .calendar {
+  position: relative;
   transition: ease-in-out 3s;
-right: 0;
+  right: 0;
   z-index: 1;
   position: fixed;
   width: 350px;
@@ -53,11 +54,11 @@ hr {
 .nav {
   width: 30px;
   height: 30px;
-  border: 2px solid rgba(255,255,255, .5);
+  border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 99px;
   outline: 0;
   background-color: transparent;
-  color:rgba(255,255,255, .5);
+  color: rgba(255, 255, 255, 0.5);
   font-weight: 600;
   cursor: pointer;
 }
@@ -103,55 +104,48 @@ hr {
   }
 }
 
-
-.footer__description{
+.footer__description {
   color: #fff;
   font-weight: 400;
   margin-top: 30px;
 }
 
-.footer__events{
-  display:flex;
+.footer__events {
+  display: flex;
   flex-wrap: wrap;
   height: auto;
   font-size: 10px;
   color: #fff;
-  letter-spacing: .8px;
-
+  letter-spacing: 0.8px;
 }
 
 .event {
-    border-radius: 5px;
-    &--new{
-      padding: 1.5em 2em;
-      background-color: $newColor;
-    }
-    &--task{
-      padding: 1.5em 2em;
-      background-color: $taskColor;
-    }
+  border-radius: 5px;
+  &--new {
+    padding: 1.5em 2em;
+    background-color: $newColor;
+  }
+  &--task {
+    padding: 1.5em 2em;
+    background-color: $taskColor;
+  }
 
-    &--event{
-      padding: 1.5em 2em;
-      background-color: $eventColor;
-    }
-
-    
+  &--event {
+    padding: 1.5em 2em;
+    background-color: $eventColor;
+  }
 }
 
-
-.event{
+.event {
   width: auto;
   margin-top: 10px;
-  &+.event{
+  & + .event {
     margin-left: 10px;
   }
 }
 
-.event{
-  &.event--event{
+.event {
+  &.event--event {
     margin-left: 0;
   }
 }
-
-

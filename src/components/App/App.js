@@ -1,13 +1,13 @@
 import React from 'react';
 import {Route, BrowserRouter, Switch} from 'react-router-dom';
 
-import Nav from '../nav';
-import Schedule from '../nav/Schedule';
-import Events from '../nav/Events';
-import Messages from '../nav/Messages';
-import Deadlines from '../nav/Deadlines';
-import Settings from '../nav/Settings';
-import Tasks from '../nav/Tasks';
+import Navigation from '../Navigation';
+import Schedule from '../Navigation/Schedule';
+import Events from '../Navigation/Events';
+import Messages from '../Navigation/Messages';
+import Deadlines from '../Navigation/Deadlines';
+import Settings from '../Navigation/Settings';
+import Tasks from '../Navigation/Tasks';
 
 import './App.scss';
 
@@ -18,11 +18,11 @@ const App= () => {
         <BrowserRouter>
 
             <header>
-                <Nav />
+                <Navigation />
             </header>
             
 
-            <main>
+            <main style={{paddingLeft: '260px', width: '100%'}}>
                 <Switch>
                     <Route path="/"  activeClassName='active' render={() => <Schedule/>} exact/>
                     <Route path="/Schedule"  activeClassName='active' render={ () => <Schedule />} />

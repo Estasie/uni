@@ -1,0 +1,15 @@
+@import '~bootstrap';
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .header__container {
+      padding: 30px 0;
+      h1 {
+          font-size: 30px;
+      }
+  }
