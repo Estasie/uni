@@ -1,5 +1,5 @@
 $headerColor: #626573;
-
+$seminar: #7BA4D4;
 .container__week {
   width: 1670px;
   display: flex;
@@ -63,3 +63,7 @@ $headerColor: #626573;
     }
 }
 
+
+.seminar-color{
+  background: $seminar;
+}

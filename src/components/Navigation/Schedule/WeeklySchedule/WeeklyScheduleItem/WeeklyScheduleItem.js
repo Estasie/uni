@@ -5,41 +5,30 @@ import "./WeeklyScheduleItem.scss";
 export default class WeeklyScheduleItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      lessons: this.props.lessons,
-      day: this.props.day,
-      isSeminar: this.props.lessons.isSeminar
-      
-    };
+    this.state = {};
   }
 
   render() {
-    let lessons = this.state.lessons;
+    console.log("props for weeklyScheduleItem", this.props);
+
     return (
-      lessons.map(lesson => {
-        if(lesson.isSeminar === false){
-          return(
-            <div className="weeklyScheduleItems-item">
-            <div className="weeklyScheduleInfo lection-color">
-              <span className="span-bold">{lesson.class}</span>
-              <span>{lesson.place}</span>
-            </div>
+      <>
+        {this.props.isSeminar === true ? (
+          <div className="weeklyScheduleItems-item">
+          <div className="weeklyScheduleInfo lection-color">
+            <span className="span-bold">{this.props.lesson.lessonName}</span>
+            <span>{this.props.lessonPlace.placeName}</span>
           </div>
-          )
-        } else {
-          return(
-            <div className="weeklyScheduleItems-item">
-            <div className="weeklyScheduleInfo seminar-color">
-              <span className="span-bold">{lesson.class}</span>
-              <span>{lesson.place}</span>
-            </div>
+        </div>
+        ) : (
+          <div className="weeklyScheduleItems-item">
+          <div className="weeklyScheduleInfo seminar-color">
+            <span className="span-bold">{this.props.lesson.lessonName}</span>
+            <span>{this.props.lessonPlace.placeName}</span>
           </div>
-          )
-        }
-        
-        
-      })
-        
+        </div>
+        )}
+      </>
     );
   }
 }

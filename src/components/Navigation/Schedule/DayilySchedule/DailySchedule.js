@@ -19,20 +19,30 @@ class DailySchedule extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: props.items,
+      today: ''
     };
-    
+   
   }
 
   render() {
+    console.log("propsForDailySchedule", this.props);
+    let weekday = new Date().toLocaleDateString('ru-RU', {weekday: 'long'});
+    console.log(weekday);
     return (
       <div className="TimeTable">
         <Today/>
       
         <div className="sheduleContainer">
-          {this.state.items.map((item) => (
-            <DailyScheduleItem {...item} key={item.id} />
-          ))}
+          {this.props.items.map((item) => {
+             if(weekday === item.dayName.toLowerCase()){
+              return (
+                <DailyScheduleItem {...item} key={item.id} />
+                )}
+            })
+          }
+           
+            
+          
         </div>
 
       </div>

@@ -6,15 +6,10 @@ import "./weeklySchedule.scss";
 export default class WeeklySchedule extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      items: props.weekItems,
-    };
-
-    // console.log(this.state.items);
   }
 
   render() {
+    console.log("props for weekly schedule", this.props);
     const lessons = [
       "8:30",
       "10:10",
@@ -25,12 +20,15 @@ export default class WeeklySchedule extends Component {
       "19:10",
     ];
 
-    const daysOfTheWeek = [];
-    for (let i = 0; i < this.state.items.length; i++) {
-      daysOfTheWeek.push(this.state.items[i].day);
-    }
+    const daysOfTheWeek = [
+      "Понедельник",
+      "Вторник",
+      "Среда",
+      "Четверг",
+      "Пятница",
+      "Суббота",
+    ];
 
-    const dayOfTheWeek = this.state.items;
     return (
       <div className="container__week">
         <div className="weekDays">
@@ -47,18 +45,64 @@ export default class WeeklySchedule extends Component {
             })}
           </div>
 
-          {dayOfTheWeek.map((day) => {
-            console.log({ ...day });
-            if (day.lessons) {
-              return (
+          {daysOfTheWeek.map((day) => {
+            let weeklyScheduleByDay = [];
+            this.props.weekItems.map((item, i) => {
+              if (item.dayName === day) {
+                for (let i = 0; i < 7; i++) {
+                  if (item.time === i) {
+                    weeklyScheduleByDay.push(
+                      <WeeklyScheduleItem {...item} key={item.time} />
+                    );
+                  } else {
+                    weeklyScheduleByDay.push(
+                      <div className="weeklyScheduleItems-item"></div>
+                    );
+                  }
+                }
+
+                // if (item.time === i) {
+                //   weeklyScheduleByDay.push(
+                //     <WeeklyScheduleItem {...item} key={item.time} />
+                //   );
+                // } else {
+                //   <div className="weeklyScheduleItems-item"></div>;
+                // }
+              }
+            });
+            return (
+              <div className="weeklyScheduleItems">{weeklyScheduleByDay}</div>
+            );
+          })}
+
+          {/* {
+            this.props.weekItems.map((item) => 
+             {
+               console.log(item);
+               return (
                 <div className="weeklyScheduleItems">
-                  <WeeklyScheduleItem {...day} key={day.id} />
+                  <WeeklyScheduleItem {...item} key={item.id} />
                 </div>
               );
-            } else {
-              return <div className="weeklyScheduleItems"></div>;
+             }
+            )
+          } */}
+
+          {/* { daysOfTheWeek.map(weekday => {
+            if(weekday === "Понедельник"){
+              return this.props.weekItems.map((day) => {
+                if (day.lesson) {
+                  return (
+                    <div className="weeklyScheduleItems">
+                      <WeeklyScheduleItem {...day} key={day.id} />
+                    </div>
+                  );
+                } else {
+                  return <div className="weeklyScheduleItems"></div>;
+                }
+              })
             }
-          })}
+            })} */}
         </div>
       </div>
     );
